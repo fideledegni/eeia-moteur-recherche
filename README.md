@@ -1,5 +1,4 @@
-# eeia-moteur-recherche
-Moteur de recherche pour une boutique de vente en ligne
+# École d'Été en IA: projet moteur de recherche
 
 ## Avant de commencer
 
