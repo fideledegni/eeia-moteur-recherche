@@ -1,2 +1,36 @@
 # eeia-moteur-recherche
-Moteur de recherche pour une boutique vente en ligne
+Moteur de recherche pour une boutique de vente en ligne
+
+## Avant de commencer
+
+**Pour Python :**
+
+Installer avec pip tous les packages du fichier `requirements.txt` avec la commande : `pip install -r requirements.txt`
+
+Si vous utilisez de nouveaux packages Python, faire `pip freeze > requirements.txt` pour mettre à jour les dépendances
+
+**Pour Node :**
+
+Faire `npm install` pour installer les dépendances node
+
+
+## Build en local
+
+Faire : `npm run build`
+
+
+## Build avant push sur github (pour la prod)
+Faire : `npm run build-production`
+
+
+## Pour lancer le serseur local:
+
+Faire : `python manage.py runserver`
+
+
+## S'il y a eu des modifications aux models
+
+Faire `python manage.py makemigrations` pour ajoute rles nouveaux models si nouvelles créations
+
+Faire `python manage.py migrate` pour appliquer les changements sur la base
+

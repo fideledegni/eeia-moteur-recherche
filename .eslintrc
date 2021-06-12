@@ -1,0 +1,73 @@
+{
+  "extends": ["eslint:recommended", "plugin:react/recommended"],
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "es6": true,
+    "node": true,
+    "jquery": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "ecmaFeatures": {
+      "experimentalObjectRestSpread": true,
+      "jsx": true
+    },
+    "sourceType": "module"
+  },
+  "plugins": ["react"],
+  "settings": {
+    "react": {
+      "createClass": "createReactClass", // Regex for Component Factory to use, default to "createReactClass"
+      "pragma": "React", // Pragma to use, default to "React"
+      "version": "detect" // React version. "detect" automatically picks the version you have installed. // default to latest and warns if missing
+    }
+  },
+  "rules": {
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "react/prop-types": "off",
+    "quotes": 0,
+    "semi": [1, "always"],
+    "comma-style": 2,
+    "no-unused-vars": 1,
+    // "react/display-name" : 0,  // Il emmerde dès qu'il y a une fonction qui retourne du jsx...
+    // surchrges récupérées de https://github.com/kgryte/eslint-rules-best-practices/blob/master/lib/index.js
+    // "block-scoped-var" : 2, // Never allow variables to be used outside of the block in which they were defined.
+    "curly": 2, // Always require curly braces.
+    // "default-case": 2, // Always require a `default` case in `switch` statements.
+    "dot-notation": 2, // Enforce using dot notation over square-bracket notation
+    "eqeqeq": 2, // Always require `===` over `==`
+    "no-implicit-coercion": 2, // Allow implicit type coercion. See [no-implicit-coercion]{@link http://eslint.org/docs/rules/no-implicit-coercion}.
+    "no-eval": 2, // Never allow the use of `eval`
+    "no-extend-native": 2, // Never allow extending native prototypes.
+    "no-extra-bind": 2, // Prevent function binding when a function does not use `this`.
+    "no-fallthrough": 2, // Prevent unintentional fall throughs in `switch` statements.
+    "no-implied-eval": 2, // Never allow implied use of `eval` with `setTimeout`, `setInterval`, and `execScript`.
+    "no-invalid-this": 2, // Never allow the use of `this` outside of classes.
+    "no-iterator": 2, // Never allow the use of the deprecated `__iterator__` property.
+    "no-labels": 2, // Never allow the user of `labels`.
+    "no-lone-blocks": 2, // Never allow standalone code blocks delimited by curly braces.
+    // "no-loop-func": 2, // Never allow functions to be created within a loop.
+    "no-native-reassign": 2, // Never allow built-in native objects to be reassigned.
+    "no-new-func": 2, // Never allow using the `Function` constructor to create functions.
+    "no-new-wrappers": 2, // Never allow using `String`, `Number`, and `Boolean` in place of primitives.
+    "no-new": 2, // Never allow use the `new` operator without assignment.
+    "no-octal-escape": 2, // Never allow octal escape sequences, which are deprecated.
+    "no-octal": 2, // Never allow octal literals that begin with a leading zero;
+    // "no-param-reassign": 2, // Never Allow parameter reassignment
+    "no-proto":2, // Never allow using deprecated `__proto__` property.
+    "no-return-assign": [2, "always"], // Never allow assignment in `return` statements.
+    "no-script-url":2,  // Never allow using `javascript:` in urls.
+    "no-self-compare": 2, // Never Allow self-comparison (NaN check).
+    "no-sequences":2, // Never allow using a comma operator to separate multiple expressions where only a single expression is expected.
+    "no-throw-literal" : 2, // Encourage only `Error` objects to be thrown.
+    "no-unused-expressions": 2, // Never allow unused expressions.
+    "no-useless-call": 2, // Never allow using `call` or `apply` when a normal function invocation will suffice.
+    "no-useless-concat": 2, // Never allow concatenation of two string literals which can be combined as a single literal.
+    "no-void": 2, // Never Allow using the `void` operator.
+    "no-with": 2, // Never allow using the `with` statement.  Je peux imaginer des cas utiles. A voir...
+    "radix":2, // Always require a `radix` parameter to `parseInt()`.
+    "wrap-iife": [ 2, "inside" ] // Always require an immediately invoked function expression (IIFE) to be wrapped.
+  }
+}
