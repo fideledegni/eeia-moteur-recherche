@@ -12,6 +12,15 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import dj_database_url
+import environ
+
+env = environ.Env(
+  # set casting, default value
+  IN_PROD=(bool, False),
+	SECRET_KEY=(str, 'django-insecure-bu7na^6_%o)knsh%=u-7_awhq%#e^e3e3h#*i9+o@^n@y_%25#')
+)
+# reading .env file
+environ.Env.read_env()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,12 +29,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-bu7na^6_%o)knsh%=u-7_awhq%#e^e3e3h#*i9+o@^n@y_%25#'
+SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True  # dev
-# DEBUG = False # prod
+# IN_PROD is False if not in os.environ
+DEBUG = not env('IN_PROD')
+print("*****", "DEBUG: ", DEBUG, "*****")
 
 ALLOWED_HOSTS = [
   'eeia-moteur-recherche.herokuapp.com',
@@ -98,15 +107,22 @@ WSGI_APPLICATION = 'eeia_moteur_recherche.wsgi.application'
 
 DATABASES = {
 	'default': {
-		# 'ENGINE': 'django.db.backends.sqlite3',
-		# 'NAME': BASE_DIR / 'db.sqlite3',
-		# TODO: Set up django.db.backends.postgresql (postgre db)
+		'ENGINE': 'django.db.backends.sqlite3',
+		'NAME': BASE_DIR / 'db.sqlite3',
 	}
 }
 
-# Heroku: Update database configuration from $DATABASE_URL.
-db_from_env = dj_database_url.config(conn_max_age=500)
-DATABASES['default'].update(db_from_env)
+if DEBUG:
+	try:
+		# read os.environ['DATABASE_URL'] and raises ImproperlyConfigured exception if not found
+		# Parse database connection url strings like psql://user:pass@127.0.0.1:8458/db
+		DATABASES['default'].update(env.db())
+	except:
+		print("DATABASE_URL is not provided in .env file. Will use db.sqlite3...")
+else:
+	# Heroku: Update database configuration from $DATABASE_URL.
+	db_from_env = dj_database_url.config(conn_max_age=500)
+	DATABASES['default'].update(db_from_env)
 
 
 # Password validation

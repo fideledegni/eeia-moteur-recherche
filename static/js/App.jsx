@@ -1,15 +1,35 @@
 import React from "react";
-import axios from "axios";
+import axios from "axios"; // Use axios for requests. Doc: https://www.npmjs.com/package/axios
 
+
+// const inProd=  process.env.inProd;
 export default class App extends React.Component {
   render() {
 
-    async function getArticles(text) {
-      // TODO: use text value
-      // Use axios for requests. Doc: https://www.npmjs.com/package/axios
+    let searchedText = "";
+
+    async function getArticles(text) { // TODO: in progress...
       try {
-        const response = await axios.get('/api/get-articles');
-        console.log(response);
+        const response = await axios.get(`/moteur/api/get-articles/${text}`);
+        // console.log(response);
+        if (response.status === 200) {
+          const data = response.data;
+          console.log("data: ", data);
+        }
+      } catch (error) {
+        console.error(error);
+      }
+    }
+
+    async function saveClicks(text) { // TODO: in progress...
+      try {
+        const clicks = ["télévision", "téléphone"].join(",");
+        const response = await axios.get(`/moteur/api/save-clicks/${text}/${clicks}`);
+        // console.log(response);
+        if (response.status === 200) {
+          const data = response.data;
+          console.log("data: ", data);
+        }
       } catch (error) {
         console.error(error);
       }
@@ -18,10 +38,10 @@ export default class App extends React.Component {
     const onKeyUp = e => {
       const keyCode = e.keyCode;
       if (keyCode === 13) {
-        console.log("Will search...");
         const text = e.target.value;
-        console.log("Entered value: ", text);
-        // getArticles(text);
+        console.log(`Will search for entered value: ${text}`);
+        searchedText = text;
+        getArticles(text);
       }
     };
 
@@ -35,7 +55,7 @@ export default class App extends React.Component {
       <div className="container">
         <div className="jumbotron">
           <h1 className="display-6">Rechercher :</h1>
-            <input className="form-control mr-sm-2" type="search" onKeyUp={e => onKeyUp(e)} autoFocus placeholder="Qu'est-ce qui vous plairaît aujourd'hui ?" aria-label="Rechercher"/>
+            <input className="form-control mr-sm-2" type="search" onKeyUp={e => onKeyUp(e)} autoFocus placeholder="Qu'est-ce qui vous plairait aujourd'hui ?" aria-label="Rechercher"/>
           <hr className="my-4"/>
 
           <div>
