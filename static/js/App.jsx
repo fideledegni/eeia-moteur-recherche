@@ -39,7 +39,7 @@ export default class App extends React.Component {
           <hr className="my-4"/>
 
           <div>
-            Artices here if any...
+            Artices here if any....
           </div>
           <img src="static/img/favicon.png"/>
         </div>

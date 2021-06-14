@@ -22,14 +22,14 @@ Faire : `npm run build`
 Faire : `npm run build-production`
 
 
-## Pour lancer le serseur local:
+## Pour lancer le serveur local:
 
 Faire : `python manage.py runserver`
 
 
 ## S'il y a eu des modifications aux models
 
-Faire `python manage.py makemigrations` pour ajoute rles nouveaux models si nouvelles créations
+Faire `python manage.py makemigrations` pour ajoute les nouveaux models si nouvelles créations
 
 Faire `python manage.py migrate` pour appliquer les changements sur la base
 
