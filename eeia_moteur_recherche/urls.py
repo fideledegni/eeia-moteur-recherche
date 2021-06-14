@@ -16,9 +16,17 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from moteur.views import index
+import environ
+
+env = environ.Env(
+	ADMIN_PATH=(str, 'admin/')
+)
+environ.Env.read_env()
+ADMIN_PATH = env('ADMIN_PATH')
 
 urlpatterns = [
   path('', index),
   path('moteur/', include('moteur.urls')),
-  path('admin/', admin.site.urls),
+  # path('admin/', admin.site.urls), # default
+  path(ADMIN_PATH, admin.site.urls), # custom url for admin
 ]
