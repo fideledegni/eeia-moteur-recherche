@@ -16,7 +16,7 @@ import environ
 
 env = environ.Env(
   # set casting, default value
-  IN_PROD=(bool, False),
+  	IN_PROD=(bool, False),
 	SECRET_KEY=(str, 'django-insecure-bu7na^6_%o)knsh%=u-7_awhq%#e^e3e3h#*i9+o@^n@y_%25#')
 )
 # reading .env file
