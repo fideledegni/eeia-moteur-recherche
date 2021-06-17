@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
+import getSearchMgr from '../helpers/search-mgr.js';
 
 const Article = ({ name }) => {
   const [show, setShow] = useState(false);
+  const searchMgr = getSearchMgr();
 
-  const openModal  = () => setShow(true);
+  const openModal  = () => { searchMgr.saveClick(name); setShow(true); };
   const closeModal = () => setShow(false);
 
   return (

@@ -1,4 +1,6 @@
 import axios from 'axios';
+axios.defaults.xsrfCookieName = 'csrftoken';
+axios.defaults.xsrfHeaderName = 'X-CSRFToken';
 
 // boolean to check the environnement mode: DEV or PROD ?
 export const DEV = !process.env.NODE_ENV || process.env.NODE_ENV === 'development';
@@ -7,7 +9,7 @@ export const DEV = !process.env.NODE_ENV || process.env.NODE_ENV === 'developmen
 export const log = (...data) => {
 	if(DEV) {
 		console.log('[EEIA]', ...data);
-	};
+	}
 };
 
 
@@ -15,8 +17,8 @@ export const log = (...data) => {
 // USED ONY FOR STYLING PURPOSES WHEN NO DATA IS AVAILABLE
 // DUPLICATE THE BEHAVIOR OF range IN PYTHON
 export const range = (start, stop) => {
-	if(!Number.isInteger(stop) || !Number.isInteger(start)) throw new Error("Expected integer");
-	return [...Array(stop - start).keys()].map(i => i + start)
+	if(!Number.isInteger(stop) || !Number.isInteger(start)) { throw new Error("Expected integer"); }
+	return [...Array(stop - start).keys()].map(i => i + start);
 };
 
 // Helper function for GET requests
