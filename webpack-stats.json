@@ -1,1 +1,1 @@
-{"status":"done","chunks":{"main":["main.css","main-572158676dcdab6a7835.js"]},"error":"ModuleNotFoundError","message":"Module not found: Error: Can't resolve '../utils' in '/home/fidele/workspace/repositories/eeia-moteur-recherche/static/js/components'","assets":{"main.css":{"name":"main.css"},"main-572158676dcdab6a7835.js":{"name":"main-572158676dcdab6a7835.js"}}}
+{"status":"done","chunks":{"main":["main.css","main-1143d3384f66aaa9022c.js"]},"assets":{"main.css":{"name":"main.css"},"main-1143d3384f66aaa9022c.js":{"name":"main-1143d3384f66aaa9022c.js"}}}
