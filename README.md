@@ -21,6 +21,8 @@ Faire : `npm run build`
 ## Build avant push sur github (pour la prod)
 Faire : `npm run build-production`
 
+**Atention :** Toujours pusher sur la branche `dev`. En effet, un push sur la branche `main` déclenche un déploiement en prod via Heroku. Il faut donc être sûr de n'avoir AUCUN BUG avant de pusher sur cette branche !
+
 
 ## Pour lancer le serveur local:
 
