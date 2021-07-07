@@ -3,6 +3,7 @@ const webpack = require('webpack');
 const BundleTracker = require('webpack-bundle-tracker');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 const headerTxt = '/* https://eeia-moteur-recherche.herokuapp.com\nCopyright (c) ' + new Date().getFullYear() + ' EEIA\nVersion: generated at ' + new Date() + '\n*/';
 
@@ -22,20 +23,15 @@ module.exports = {
       'process.env': {
         'NODE_ENV': JSON.stringify('production')
     }}),
-    // garder les hashes cohérents entre les compilations
-    new webpack.optimize.OccurenceOrderPlugin(),
-    // minifier le code
-    new webpack.optimize.UglifyJsPlugin({
-      compressor: {
-        warnings: false
-      }
-    }),
     new webpack.BannerPlugin({
       banner: headerTxt
     }),
     new MiniCssExtractPlugin(),
     new CleanWebpackPlugin(),
   ],
+  optimization: {
+    minimizer: [new UglifyJsPlugin()],
+  },
   module: {
     rules: [
       {

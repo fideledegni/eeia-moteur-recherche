@@ -118,8 +118,8 @@ if DEBUG:
 	try:
 		# read os.environ['DATABASE_URL'] and raises ImproperlyConfigured exception if not found
 		# Parse database connection url strings like psql://user:pass@127.0.0.1:8458/db
-		# DATABASES['default'].update(env.db())
-		print("*** Will intentionnally use db.sqlite3...")
+		DATABASES['default'].update(env.db())
+		# print("*** Will intentionnally use db.sqlite3...")
 	except:
 		print("DATABASE_URL is not provided in .env file. Will use db.sqlite3...")
 else:
