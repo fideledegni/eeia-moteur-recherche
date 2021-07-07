@@ -17,6 +17,7 @@ import environ
 env = environ.Env(
   # set casting, default value
   	IN_PROD=(bool, False),
+		ADMIN_PATH=(str, 'admin/'),
 	SECRET_KEY=(str, 'django-insecure-bu7na^6_%o)knsh%=u-7_awhq%#e^e3e3h#*i9+o@^n@y_%25#')
 )
 # reading .env file
@@ -35,6 +36,8 @@ SECRET_KEY = env('SECRET_KEY')
 # IN_PROD is False if not in os.environ
 DEBUG = not env('IN_PROD')
 print("*****", "DEBUG: ", DEBUG, "*****")
+
+ADMIN_PATH = env('ADMIN_PATH') # Uses by urls.py
 
 ALLOWED_HOSTS = [
   'eeia-moteur-recherche.herokuapp.com',
@@ -115,7 +118,8 @@ if DEBUG:
 	try:
 		# read os.environ['DATABASE_URL'] and raises ImproperlyConfigured exception if not found
 		# Parse database connection url strings like psql://user:pass@127.0.0.1:8458/db
-		DATABASES['default'].update(env.db())
+		# DATABASES['default'].update(env.db())
+		print("*** Will intentionnally use db.sqlite3...")
 	except:
 		print("DATABASE_URL is not provided in .env file. Will use db.sqlite3...")
 else:

@@ -27,8 +27,8 @@ function searchMgr() {
 
     // return data.list;
 		try {
-			const data = await niceFetch(`/moteur/api/get-articles?search=${searchedText}`);
-			console.log("data fetched: ", data); // data format: {list: [{id, name, description}], search_id}
+			const data = await niceFetch(`/moteur/api/get-articles?search=${searchedText}`); // data format: {list: [{id, name, description}], search_id}
+			// console.log("data fetched: ", data);
       setSearchId(data.search_id);
       const articlesList = data.list;
       // const articlesList = data.list.map(a => a.id);

@@ -40,8 +40,7 @@ def clear_data():
 
 def dump_data():
   for article in articles:
-    new_article = Article(name=article['name'], 
-                          description=article['description'])
+    new_article = Article(name=article['name'], image_name=article['image_name'], description=article['description'])
     new_article.save()
 
 def run_seed(mode):

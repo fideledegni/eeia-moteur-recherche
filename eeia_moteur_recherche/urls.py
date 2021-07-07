@@ -16,13 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from moteur.views import index
-import environ
-
-env = environ.Env(
-	ADMIN_PATH=(str, 'admin/')
-)
-environ.Env.read_env()
-ADMIN_PATH = env('ADMIN_PATH')
+from .settings import ADMIN_PATH
 
 urlpatterns = [
   path('', index),

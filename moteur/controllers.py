@@ -1,9 +1,10 @@
-from django.shortcuts import render #, get_object_or_404
+# from django.shortcuts import render #, get_object_or_404
 from django.utils import timezone
 from unidecode import unidecode # used to remove accent
 from .models import Search, Article
 
 IS_LEARNING = True # set to False when learning finished
+from eeia_moteur_recherche.settings import DEBUG
 
 
 def debug(func):
@@ -13,7 +14,7 @@ def debug(func):
     print(f"\n*****DEBUG: {func.__name__} called with args:\n{args_print}\n"
           f"and with kwargs:\n{kwargs_print}*****\n")
     return func(*args, **kwargs)
-  return wrapper
+  return wrapper if DEBUG else func
 
 
 def remove_accent(string):
@@ -22,8 +23,7 @@ def remove_accent(string):
 
 
 def save_search(text):
-  # SAVE search text ONLY IF non-empty string
-  # CHANGE THIS BEHAVIOR ??????
+  # SAVE search text ONLY IF non-empty string? YES!!
   if text:
     s = Search(search_text=text, search_date=timezone.now())
     s.save()
@@ -45,6 +45,7 @@ def add_search_id(collection, search_id):
 
 
 def default_model(text, articles_list, searches_list):
+  # The filter to be optimized!
   def filter_func(article):
     return text in remove_accent(article['name'])
   filtered_articles = filter(filter_func, articles_list)
@@ -52,11 +53,8 @@ def default_model(text, articles_list, searches_list):
 
 
 
-# @debug
+@debug
 def get_search_results(text, articles_list, searches_list, model=default_model):
-  # print("*****In get_search_results*****", "text: ", text)
-  # print("*****In get_search_results*****", "articles_list: ", articles_list)
-  # print("*****In get_search_results*****", "searches_list: ", searches_list)
   text = remove_accent(text)
   search_id = None
   res = { "list": model(text, articles_list, searches_list) }

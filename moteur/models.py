@@ -20,8 +20,12 @@ class Search(models.Model):
 #   return []
 class Article(models.Model):
   name = models.CharField(max_length=200)
-  description = models.CharField(max_length=200)
-  # top_search_texts = ArrayField(models.CharField(max_length=200, blank=True), default=default_top_search_texts)
+  image_name = models.CharField(max_length=50)
+  description = models.CharField(max_length=500)
+
+  def get_top_search_texts(self):
+    st = Search.objects.filter(clicked_article_1=self.name)
+    return list(s.search_text for s in st)
 
   def __str__(self):
     return self.name

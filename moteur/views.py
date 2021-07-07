@@ -1,9 +1,10 @@
 from django.shortcuts import render #, get_object_or_404
-from django.http import JsonResponse, HttpResponseForbidden #, HttpResponse
-from django.views.decorators.csrf import csrf_exempt
+from django.http import JsonResponse, HttpResponseForbidden, HttpResponse
 import json
+import csv
 
 from .controllers import fetch_all, get_search_results, update_search, IS_LEARNING
+from eeia_moteur_recherche.settings import DEBUG
 
 
 # HOME
@@ -14,18 +15,17 @@ def index(request):
 # GET ARTICLES
 def search(request):
   text = request.GET.get('search', '')
+  if DEBUG: print("Got search reques with text: ", text)
   articles_list, searches_list = fetch_all(transformer=list) # we must convert the QuerySets to list objects
   response = get_search_results(text, articles_list, searches_list)
   return JsonResponse(response, safe=False)
 
 
 # SAVE ARTICLE CLICK
-@csrf_exempt # This decorator marks the 'save_click' view as being exempt from the protection ensured by the middleware.
-             # WE CAN CHANGE THIS BEHAVIOR AFTER !! I'M USING IT FOR SIMPLICITY SINCE THE VIEW DOESN'T WORK WITHOUT IT !
 def save_click(request):
   if request.method == "POST" and IS_LEARNING:
     data = json.loads(request.body.decode('utf-8'))
-    print(data)
+    if DEBUG: print("Got save_click reques with data: ", data)
     search_id = data['search_id']
     click_number = data['click_number']
     article_name = data['article_name']
@@ -34,3 +34,23 @@ def save_click(request):
       except: pass
     return JsonResponse({ "OK": True })
   return HttpResponseForbidden() # GET method not allowed
+
+
+# GET SEARCHES LIST IN CSV FORMAT
+def get_csv_searches_list(_):
+  _, searches_list = fetch_all(transformer=list)
+  titles = ["id", "search_text", "search_date", "clicked_article_1", "clicked_article_2", "clicked_article_3"]
+  # head = ",".join(titles)
+  # lines = "\n".join(",".join(str(s[key]) for key in titles) for s in searches_list)
+  # csvString = head + "\n" + lines
+  # print(csvString)
+
+  response = HttpResponse(
+    content_type='text/csv',
+    headers={'Content-Disposition': 'attachment; filename="liste_des_recherches.csv"'},
+  )
+
+  writer = csv.writer(response)
+  writer.writerow(titles)
+  for s in searches_list: writer.writerow(str(s[key]) for key in titles)
+  return response
