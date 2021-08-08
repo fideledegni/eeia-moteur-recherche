@@ -15,7 +15,7 @@ def index(request):
 # GET ARTICLES
 def search(request):
   text = request.GET.get('search', '')
-  if DEBUG: print("Got search reques with text: ", text)
+  if DEBUG: print("Got 'search' request with text: ", text)
   articles_list, searches_list = fetch_all(transformer=list) # we must convert the QuerySets to list objects
   response = get_search_results(text, articles_list, searches_list)
   return JsonResponse(response, safe=False)
@@ -25,7 +25,7 @@ def search(request):
 def save_click(request):
   if request.method == "POST" and IS_LEARNING:
     data = json.loads(request.body.decode('utf-8'))
-    if DEBUG: print("Got save_click reques with data: ", data)
+    if DEBUG: print("Got 'save click' request with data: ", data)
     search_id = data['search_id']
     click_number = data['click_number']
     article_name = data['article_name']
