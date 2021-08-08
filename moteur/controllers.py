@@ -67,7 +67,9 @@ def add_search_id(collection: dict, search_id: int):
 def default_model(text, articles_list, searches_list):
   # The filter to be optimized !
   def ranker(article):
-    return text in remove_accent(article['name'])
+    found = text in remove_accent(article['name'])
+    if text and found: article['is_concerned'] = 1
+    return found
   # Shuffle to avoid having the same order
   # for same-scored articles
   shuffle(articles_list)

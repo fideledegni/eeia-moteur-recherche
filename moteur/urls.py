@@ -8,5 +8,7 @@ urlpatterns = [
   # ex: /moteur/api/save-click (only POST requests here)
   path('api/save-click', views.save_click, name='save_click'),
   # ex: /moteur/api/get_csv_searches_list
-  path('api/get_csv_searches_list', views.get_csv_searches_list, name='get_csv_searches_list')
+  path('api/get_csv_searches_list', views.get_csv_searches_list, name='get_csv_searches_list'),
+  # ex: /moteur/api/get_csv_articles_list
+  path('api/get_csv_articles_list', views.get_csv_articles_list, name='get_csv_articles_list')
 ]

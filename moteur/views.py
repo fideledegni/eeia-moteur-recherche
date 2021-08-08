@@ -54,3 +54,19 @@ def get_csv_searches_list(_):
   writer.writerow(titles)
   for s in searches_list: writer.writerow(str(s[key]) for key in titles)
   return response
+
+
+# GET ARTICLES LIST IN CSV FORMAT
+def get_csv_articles_list(_):
+  articles_list, _ = fetch_all(transformer=list)
+  titles = ["id", "name", "description"]
+
+  response = HttpResponse(
+    content_type='text/csv',
+    headers={'Content-Disposition': 'attachment; filename="liste_des_articles.csv"'},
+  )
+
+  writer = csv.writer(response)
+  writer.writerow(titles)
+  for a in articles_list: writer.writerow(str(a[key]) for key in titles)
+  return response

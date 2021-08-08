@@ -6,12 +6,13 @@ const Article = ({ props }) => {
 
   const openModal  = () => { searchMgr.saveClick(props.name); };
 
-  const image_name = props.image_name || "favicon.png"
-  const modalId = `articleModal-${props.id}`
+  const image_name = props.image_name || "favicon.png";
+  const modalId = `articleModal-${props.id}`;
+  const isConcerned = props.is_concerned;
 
   return <React.Fragment>
-    <div className="card m-2 article-card" data-toggle="modal" data-target={`#${modalId}`} onClick={openModal}>
-      <img src={`static/img/${image_name}`}/>
+    <div className={`card m-2 article-card ${isConcerned ? "bg-info": ""}`} data-toggle="modal" data-target={`#${modalId}`} onClick={openModal}>
+      <img src={`static/img/${image_name}`} alt={image_name}/>
       <div className="card-body">
         <p className="card-text text-center text-uppercase">{props.name}</p>
       </div>
@@ -25,7 +26,7 @@ const Article = ({ props }) => {
             <button type="button" className="btn-close" data-dismiss="modal" />
           </div>
           <div className="modal-body text-center">
-            <img src={`static/img/${image_name}`}/>
+            <img src={`static/img/${image_name}`} alt={image_name} height="500"/>
             <br/><br/>
             <p>{props.description || "Pas d'informations supplémentaires pour cet article"}</p>
           </div>

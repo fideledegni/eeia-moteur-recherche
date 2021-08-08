@@ -1,77 +1,177 @@
 [
   {
     "name": "Lave vaisselle",
-    "image_name": "",
+    "image_name": "lave_vaisselle.jpeg",
     "description": ""
   },
   {
     "name": "Four électrique",
-    "image_name": "",
+    "image_name": "four_electrique.jpg",
     "description": ""
   },
   {
     "name": "Réfrigérateur congélateur bas",
-    "image_name": "",
+    "image_name": "refrigerateur_congelateur_bas.jpg",
     "description": ""
   },
   {
     "name": "Disque dur externe TOSHIBA",
-    "image_name": "",
+    "image_name": "disque_dur_externe_toshiba.jpeg",
     "description": "Canvio basics 1To - USB 3.0"
   },
   {
     "name": "Manette PS4",
-    "image_name": "",
+    "image_name": "manette_ps4.jpeg",
     "description": "Dual Shock 4.0 V2 JetBlack - PlayStation Officiel"
   },
   {
     "name": "Apple iPhone 7 32Go Noir",
-    "image_name": "",
+    "image_name": "apple_iphone7.jpg",
     "description": "Reconditionné - Excellent état"
   },
   {
     "name": "Sèche linge à condensation connecté",
-    "image_name": "",
+    "image_name": "seche_linge.jpeg",
     "description": "CANDY CSC9DE-47-9"
   },
   {
     "name": "Tapis de course pliable Mixte J01F",
-    "image_name": "",
+    "image_name": "tapis_course_pliable.jpeg",
     "description": "Motorisé 10 - JDM SPORTS"
   },
   {
     "name": "Rasoir/Tondeuse électrique",
-    "image_name": "",
+    "image_name": "rasoir_tondeuse_electrique.jpeg",
     "description": "PHILIPS S5400/06"
   },
   {
     "name": "TCL 65QLED790 - TV QLED UHD 4K - 65' (165cm) - Dolby",
-    "image_name": "",
+    "image_name": "tv_tcl_qled_uhd_4k.jpg",
     "description": "Format d'affichage : 4K UHD (2160p) - Résolution : 3840 x 2160 - Tuner TV numérique : DVB-C, DVB-S2, DVB-T2"
   },
   {
     "name": "TOSHIBA 50UL3B63DG TV LED UHD 4K - 5' (126 cm) - Smart TV - Bluetooth - 4 x HDMI - 2 X USB",
-    "image_name": "",
+    "image_name": "tv_toshiba_leduhd_4k.jpg",
     "description": "Format d'affichage : 4K UHD (2160p) - Résolution : 3840 x 2160 - Tuner TV numérique : DVB-C, DVB-S, DVB-S2, DVB-T, DVB-T2"
   },
   {
-    "name": "PC Portable Ultrabook - LENOVO ",
-    "image_name": "",
+    "name": "PC Portable Ultrabook - LENOVO",
+    "image_name": "pc_portable_ultrabook_lenovo.jpeg",
     "description": "RAM : 4 Go (1 x 4 Go) - Stockage principal : 128 Go SSD M.2 2242 PCIe 3.0 x2 - NVM Express (NVMe) - Système d'exploitation : Windows 10 Home in S mode - français - Poids : 1.85 kg "
   },
   {
-    "name": "PC Portable - ACER Aspire 5 - A514-53 ",
-    "image_name": "",
+    "name": "PC Portable - ACER Aspire 5 - A514-53",
+    "image_name": "pc_portable_acer_aspire.jpeg",
     "description": "RAM : 8 Go (1 x 4 Go + 4 Go (soudé)) - Stockage principal : 256 Go SSD - SanDisk - Système d'exploitation : Edition Windows 10 Home 64 bits en mode S - Poids : 1.7 kg "
   },
   {
-    "name": "Ordinateur portable TOSHIBA Portégé ",
-    "image_name": "",
+    "name": "Ordinateur portable TOSHIBA Portégé",
+    "image_name": "ordinateur_portable_toshiba_portege.jpg",
     "description": "RAM : 4 Go (1 x 2 Go + 2 Go (soudé)) - Stockage principal : 128 Go SSD SATA 3Gb/s - Système d'exploitation : Microsoft Windows 7 Professionnel Edition 64 bits - Poids : 1.12 kg"
   },
   {
     "name": "CHARGEUR adaptateur secteur pour Toshiba Satellite A600 A660 A665 A80 C645 C645D C650",
-    "image_name": "",
+    "image_name": "chargeur_adaptateur_toshiba_satellite.jpeg",
     "description": "Sortie de tension: 19V - 4,74A - 90W . Taille de la prise: Embout : 5.5mm x 2.5mm Modèles compatibles : ASUS , Toshiba Tecra , Toshiba Satellite , PACKARD BELL IPOWER , MEDION"
+  },
+  {
+    "name": "Casque Beats Noir",
+    "image_name": "casque_beats_noir.jpeg",
+    "description": ""
+  },
+  {
+    "name": "Casque Beats Rouge",
+    "image_name": "casque_beats_rouge.jpeg",
+    "description": ""
+  },
+  {
+    "name": "Casque JBL Consumer Rouge",
+    "image_name": "casque_jbl_consumer_rouge.jpeg",
+    "description": ""
+  },
+  {
+    "name": "Casque JBL Tune Noir",
+    "image_name": "casque_jbl_tune_noir.jpeg",
+    "description": ""
+  },
+  {
+    "name": "Casque Pionner Noir",
+    "image_name": "casque_pionner_noir.jpeg",
+    "description": ""
+  },
+  {
+    "name": "Casque Sony Noir",
+    "image_name": "casque_sony_noir.jpeg",
+    "description": ""
+  },
+  {
+    "name": "Farine de Soja",
+    "image_name": "farine_de_soja.jpeg",
+    "description": ""
+  },
+  {
+    "name": "Téléphone Samsung Galaxy Note 20 Ultra 5G",
+    "image_name": "telephone_samsung_galaxy_note20_ultra_5g.jpeg",
+    "description": ""
+  },
+  {
+    "name": "Téléphone Samsung Galaxy S20 FE",
+    "image_name": "telephone_samsung_galaxy_s20fe.jpeg",
+    "description": ""
+  },
+  {
+    "name": "Téléphone Xiaomi Mi 10T",
+    "image_name": "telephone_xiaomi_mi10t.jpeg",
+    "description": ""
+  },
+  {
+    "name": "Téléphone Xiaomi Mi 11 5G",
+    "image_name": "telephone_xiaomi_mi11_5g.jpeg",
+    "description": ""
+  },
+  {
+    "name": "Télévision LG Nanocell",
+    "image_name": "television_lg_nanocell.jpeg",
+    "description": ""
+  },
+  {
+    "name": "Télévision LG OLED",
+    "image_name": "television_lg_oled.jpeg",
+    "description": ""
+  },
+  {
+    "name": "Ventilateur Classique Blanc",
+    "image_name": "ventilateur_classique_blanc.jpeg",
+    "description": ""
+  },
+  {
+    "name": "Ventilateur Connecté",
+    "image_name": "ventilateur_connecte.jpeg",
+    "description": ""
+  },
+  {
+    "name": "Ventilateur Design Blanc",
+    "image_name": "ventilateur_design_blanc.jpeg",
+    "description": ""
+  },
+  {
+    "name": "Ventilateur Design Bois",
+    "image_name": "ventilateur_design_bois.jpeg",
+    "description": ""
+  },
+  {
+    "name": "Télécommande TV",
+    "image_name": "telecommande_tv.jpg",
+    "description": "Télécommande universelle 12 en 1 HDEO Multi fonction DVD,TV,SAT,VCR"
+  },
+  {
+    "name": "Cable HDMI pour TV",
+    "image_name": "cable_hdmi_tv.jpeg",
+    "description": "mini HDMI to HDMI Cable, 6ft (~2m) – Simply NUC"
+  },
+  {
+    "name": "Meuble TV",
+    "image_name": "meuble_tv.jpeg",
+    "description": "Meuble TV ADDISON , chêne clair"
   }
 ]
