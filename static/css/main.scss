@@ -1,5 +1,11 @@
 @import "~bootstrap/scss/bootstrap";
 
+$md: '(max-width : 1200px)';
+$sm: '(max-width : 979px)';
+$xs: 'max-width : 767px';
+$xsMobile: '(max-width : 480px)';
+
+
 body {
   // color: #125d98;
   color: black;
@@ -15,3 +21,10 @@ body {
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(0, 0, 0, 0.6);
   transform: translate(0, -5px);
 }
+
+// img {
+//   height: 400px;
+//   // @media screen and #{$sm} {
+//   //   width: max-content;
+//   // }
+// }

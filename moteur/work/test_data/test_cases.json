@@ -1,0 +1,66 @@
+{
+    "CONGEL": [{
+            "description": "",
+            "image_name": "",
+            "name": "Réfrigérateur congélateur bas"
+        }],
+    "CoNgélateur": [{
+            "description": "",
+            "image_name": "",
+            "name": "Réfrigérateur congélateur bas"
+        }],
+    "PS": [{
+            "description": "Dual Shock 4.0 V2 JetBlack - PlayStation Officiel",
+            "image_name": "",
+            "name": "Manette PS4"
+        }],
+    "charge": [{
+            "description": "Sortie de tension: 19V - 4,74A - 90W . Taille de la prise: Embout : 5.5mm x 2.5mm Modèles compatibles : ASUS , Toshiba Tecra , Toshiba Satellite , PACKARD BELL IPOWER , MEDION",
+            "image_name": "",
+            "name": "CHARGEUR adaptateur secteur pour Toshiba Satellite A600 A660 A665 A80 C645 C645D C650"
+        }],
+    "chargeUR": [{
+            "description": "Sortie de tension: 19V - 4,74A - 90W . Taille de la prise: Embout : 5.5mm x 2.5mm Modèles compatibles : ASUS , Toshiba Tecra , Toshiba Satellite , PACKARD BELL IPOWER , MEDION",
+            "image_name": "",
+            "name": "CHARGEUR adaptateur secteur pour Toshiba Satellite A600 A660 A665 A80 C645 C645D C650"
+        }],
+    "chargé": [{
+            "description": "Sortie de tension: 19V - 4,74A - 90W . Taille de la prise: Embout : 5.5mm x 2.5mm Modèles compatibles : ASUS , Toshiba Tecra , Toshiba Satellite , PACKARD BELL IPOWER , MEDION",
+            "image_name": "",
+            "name": "CHARGEUR adaptateur secteur pour Toshiba Satellite A600 A660 A665 A80 C645 C645D C650"
+        }],
+    "pS4": [{
+            "description": "Dual Shock 4.0 V2 JetBlack - PlayStation Officiel",
+            "image_name": "",
+            "name": "Manette PS4"
+        }],
+    "pc": [{
+            "description": "RAM : 4 Go (1 x 4 Go) - Stockage principal : 128 Go SSD M.2 2242 PCIe 3.0 x2 - NVM Express (NVMe) - Système d'exploitation : Windows 10 Home in S mode - français - Poids : 1.85 kg ",
+            "image_name": "",
+            "name": "PC Portable Ultrabook - LENOVO"
+        },
+        {
+            "description": "RAM : 8 Go (1 x 4 Go + 4 Go (soudé)) - Stockage principal : 256 Go SSD - SanDisk - Système d'exploitation : Edition Windows 10 Home 64 bits en mode S - Poids : 1.7 kg ",
+            "image_name": "",
+            "name": "PC Portable - ACER Aspire 5 - A514-53"
+        }],
+    "rase": [],
+    "refrigerateur": [{
+            "description": "",
+            "image_name": "",
+            "name": "Réfrigérateur congélateur bas"
+        }],
+    "réfrigétareur": [],
+    "saiche": [],
+    "seche": [{
+            "description": "CANDY CSC9DE-47-9",
+            "image_name": "",
+            "name": "Sèche linge à condensation connecté"
+        }],
+    "secher": [],
+    "sèche": [{
+            "description": "CANDY CSC9DE-47-9",
+            "image_name": "",
+            "name": "Sèche linge à condensation connecté"
+        }]
+}
