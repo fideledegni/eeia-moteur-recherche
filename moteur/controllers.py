@@ -165,11 +165,9 @@ def learns_model(text, articles_list, searches_list):
 
 
 models = [default_model, edit_model, learns_model]
-## CHOOSE MODEL HERE:
-model = models[2]
 
 # @debug
-def get_search_results(text, articles_list, searches_list):
+def get_search_results(text, articles_list, searches_list, model_num):
   """Utils for the search engine. Fetch all the articles that match the searched text
   using the given model
 
@@ -183,6 +181,20 @@ def get_search_results(text, articles_list, searches_list):
   Returns:
     dict: the result is on the format {"list": array_of_result}
   """
+
+
+  ## CHOOSE MODEL HERE:
+  n = 2 # default model_num
+  print("GOT model_num from client: ", model_num)
+  if model_num:
+    try:
+      model_num = int(model_num)
+      if 1 <= model_num <= 3: n = model_num - 1
+      print("Will use model_num: ", n)
+    except:
+      pass
+  model = models[n]
+
   search_id = None
   res = { "list": model(text, articles_list, searches_list) }
   if IS_LEARNING:

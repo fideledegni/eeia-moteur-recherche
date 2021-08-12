@@ -15,9 +15,10 @@ def index(request):
 # GET ARTICLES
 def search(request):
   text = request.GET.get('search', '')
+  model_num = request.GET.get('model_num', '')
   if DEBUG: print("Got 'search' request with text: ", text)
   articles_list, searches_list = fetch_all(transformer=list) # we must convert the QuerySets to list objects
-  response = get_search_results(text, articles_list, searches_list)
+  response = get_search_results(text, articles_list, searches_list, model_num)
   return JsonResponse(response, safe=False)
 
 

@@ -11,7 +11,8 @@ function searchMgr() {
   const setSearchId = id => { search_id = id; };
 
 
-  const getArticles = async searchedText => {
+  const getArticles = async (searchedText, modelNum) => {
+    modelNum = modelNum || 1
     resetClickNumber();
     // const d = {
     //   test: {list: [{id: 1, name: "Télévision", description: "Une télé"}], search_id: 7, l: [1, 2, 3, 4, 8]},
@@ -27,7 +28,7 @@ function searchMgr() {
 
     // return data.list;
 		try {
-			const data = await niceFetch(`/moteur/api/get-articles?search=${searchedText}`); // data format: {list: [{id, name, description}], search_id}
+			const data = await niceFetch(`/moteur/api/get-articles?search=${searchedText}&model_num=${modelNum}`); // data format: {list: [{id, name, description}], search_id}
 			// console.log("data fetched: ", data);
       setSearchId(data.search_id);
       const articlesList = data.list;
